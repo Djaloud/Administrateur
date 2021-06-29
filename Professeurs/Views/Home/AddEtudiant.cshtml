@@ -4,60 +4,329 @@
 @{
     ViewBag.Title = "Ajouter Etudiant";
 }
+@*
 
-<div class="header bg-default pb-8 pt-5 pt-md-8">
-    <div class="container-fluid">
-        <div class="header-body">
-            <div class="container-fluid mt--7">
-                <div class="card">
-                    <div class="card-header">
-                        <form>
-                            <div class="col-md-4">
-                                <label for="validationCustom01" class="form-label">Code Apogee</label>
-                                <input type="text" class="form-control" id="validationCustom01" name="apogee" required>
 
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Nom</label>
-                                <input type="text" class="form-control" id="validationCustom02" name="nom" required>
+    <div class="header bg-default pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+                <div class="container-fluid mt--7">
+                    <div class="card">
+                        <div class="card-header">
+                            <form>
+                                <div class="col-md-4">
+                                    <label for="validationCustom01" class="form-label">Code Apogee</label>
+                                    <input type="text" class="form-control" id="validationCustom01" name="apogee" required>
 
-                            </div>
-                            <div class="col-md-4">
-                                <label for="validationCustom02" class="form-label">Prénom </label>
-                                <input type="text" class="form-control" id="validationCustom02" name="prenom" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">Tél</label>
-                                <input type="text" class="form-control" id="validationCustom03" name="tel" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">Email</label>
-                                <input type="text" class="form-control" id="validationCustom03" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="validationTextarea" class="form-label">Adresse</label>
-                                <textarea class="form-control " id="validationTextarea" name="adresse" required></textarea>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom02" class="form-label">Nom</label>
+                                    <input type="text" class="form-control" id="validationCustom02" name="nom" required>
 
-                            </div>
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">Massar</label>
-                                <input type="text" class="form-control" id="validationCustom03" name="massar" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="validationCustom03" class="form-label">CIN</label>
-                                <input type="text" class="form-control" id="validationCustom03" name="cin" required>
-                            </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="validationCustom02" class="form-label">Prénom </label>
+                                    <input type="text" class="form-control" id="validationCustom02" name="prenom" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">Tél</label>
+                                    <input type="text" class="form-control" id="validationCustom03" name="tel" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="validationCustom03" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="validationTextarea" class="form-label">Adresse</label>
+                                    <textarea class="form-control " id="validationTextarea" name="adresse" required></textarea>
 
-                          
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">Massar</label>
+                                    <input type="text" class="form-control" id="validationCustom03" name="massar" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="validationCustom03" class="form-label">CIN</label>
+                                    <input type="text" class="form-control" id="validationCustom03" name="cin" required>
+                                </div>
 
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Valider</button>
-                            </div>
-                        </form>
 
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary" type="submit">Valider</button>
+                                </div>
+                            </form>
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+*@
+
+
+<div class="header bg-default pb-8 pt-5 pt-md-8">
+        <div class="container-fluid">
+            <div class="header-body">
+                <!-- Card stats -->
+                <div class="row">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container-fluid mt--7">
+        <div class="card">
+        <div class="card-header"> <h3 class="mb-0">Ajouter Etudiant</h3></div>
+              <div class="card-body">
+              <form action=" {{ url('doc') }}" method="post">
+              
+                <div class="row">
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="type">Apogée</label>
+                    <input type="text" name="apogee" id="exampleFormControlInput1" class="form-control" placeholder="Apogee">
+                      
+                    
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="">Nom</label><input type="text" class="form-control" name="nom" id="exampleFormControlInput1" placeholder="Nom">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for=""> Prénom</label><input type="text" class="form-control" name="prenom" id="exampleFormControlInput1" placeholder="Prénom">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for=""> Sexe</label><input type="text" class="form-control" name="sexe" id="exampleFormControlInput1" placeholder="Sexe">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="">E-mail</label> <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="E-mail">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="region">Adresse</label><input type="text" class="form-control" name = "addresse"  id="exampleFormControlInput1" placeholder="Adresse">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Massar</label><input type="text" class="form-control" name="massar" id="exampleFormControlInput1" placeholder="Massar">
+                    </div>
+                  </div>
+
+                  
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="tarif">CIN</label><input type="number" class="form-control" name="cin" id="exampleFormControlInput1" placeholder="CIN">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="cin">Nom de Famille</label><input type="text" class="form-control" name="lastname_fr" id="exampleFormControlInput1" placeholder="Nom de Famille">
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="specialite">الاسم العائلي</label>
+                    <input type="text" name="lastname_ar" id="" class="form-control" id="exampleFormControlInput1" placeholder="الاسم العائلي">
+                    
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="cin">Prénom</label><input type="text" class="form-control" name="firstname_fr" id="exampleFormControlInput1" placeholder="Prénom">
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="specialite">الاسم الشخصي</label>
+                    <input type="text" name="firstname_ar" id="" class="form-control" id="exampleFormControlInput1" placeholder="الاسم الشخصي">
+                    
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="region">Date de naissance</label><input type="Date" class="form-control" name = "ddn"  id="exampleFormControlInput1" placeholder="Date de naissance">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Lieu de naissance</label><input type="text" class="form-control" name="ldn" id="exampleFormControlInput1" placeholder="Ville">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Nationalité</label><input type="text" class="form-control" name="natio" id="exampleFormControlInput1" placeholder="Nationalité">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Telephone</label><input type="text" class="form-control" name="phone" id="exampleFormControlInput1" placeholder="Numero de Tel">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Nom du père</label><input type="text" class="form-control" name="father_name" id="exampleFormControlInput1" placeholder="Nom du père">
+                    </div>
+                  </div>
+
+                    <div class="col-md-4">
+                  <div class="form-group">
+                      <label class="text-black" for="ville">Métier du père</label><input type="text" class="form-control" name="father_job" id="exampleFormControlInput1" placeholder="Métier du père">
+                    </div>
+                  </div>
+                  
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Nom de la mère</label><input type="text" class="form-control" name="mother_name" id="exampleFormControlInput1" placeholder="Ville">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Métier de la mère</label><input type="text" class="form-control" name="mother_job" id="exampleFormControlInput1" placeholder="Métier de la mère">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Adresse des parents</label><input type="text" class="form-control" name="parents_adress" id="exampleFormControlInput1" placeholder="Adresse des parents">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Tel des parents</label><input type="text" class="form-control" name="parents_phone" id="exampleFormControlInput1" placeholder="Tel des parents">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Année</label><input type="text" class="form-control" name="annee" id="exampleFormControlInput1" placeholder="Année">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Filière</label><input type="text" class="form-control" name="filiere" id="exampleFormControlInput1" placeholder="Filière">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="type">Type du BAC</label>
+                    <select name="type_bac" id="" class="form-control">
+                      <option value="A">Sciens Maths A</option>
+                      <option value="B">Sciens Maths B</option>
+                      <option value="pc">Sciens PC</option>
+                      <option value="svt">Sciens SVT </option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="type">Mention du BAC</label>
+                    <select name="mention_bac" id="" class="form-control">
+                      <option value="t">Très Bien</option>
+                      <option value="b">Bien</option>
+                      <option value="a">Assez Bien</option>
+                      <option value="p">Passable</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                    <label class="text-black" for="type">Mention du BAC</label>
+                    <select name="annee_bac" id="" class="form-control">
+                      <option value="20">2020</option>
+                      <option value="19">2019</option>
+                      <option value="18">2018</option>
+                      <option value="17">2017</option>
+                    </select>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Lycée</label><input type="text" class="form-control" name="lycee" id="exampleFormControlInput1" placeholder="Lycée">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Lycée</label><input type="text" class="form-control" name="lycee" id="exampleFormControlInput1" placeholder="Lycée">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Délégation</label><input type="text" class="form-control" name="delegation" id="exampleFormControlInput1" placeholder="Délégation">
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Académie</label><input type="text" class="form-control" name="academie" id="exampleFormControlInput1" placeholder="Académie">
+                    </div>
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="form-group">
+                    	
+                      <span class="label label-warning">Cette partie concerne les étudiants qui accèdent de la 3ème ou la 4ème année* </span> 
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Diplome</label><input type="text" class="form-control" name="diplome" id="exampleFormControlInput1" placeholder="Diplome">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Ecole</label><input type="text" class="form-control" name="ecole" id="exampleFormControlInput1" placeholder="Ecole du diplome">
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="text-black" for="ville">Ville</label><input type="text" class="form-control" name="ville_diplome" id="exampleFormControlInput1" placeholder="Ville du diplome">
+                    </div>
+                  </div>
+
+
+                  <div class="col-4">
+                  </div>
+                  <div class="col-4">
+                    <div class="form-group">
+                      <input type="submit" name="submit" class="form-control btn-success" id="exampleFormControlInput1" value="Add">
+                    </div>
+                  </div>
+                <div>
+              </form>
+              </div>
+            </div>
+        </div>
+

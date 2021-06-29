@@ -168,8 +168,11 @@ namespace Professeurs.Controllers
             md.SaveChanges();
             return View("AddProf");
         }
-
-
+        public IActionResult AddEtudiant()
+        {
+            return View();
+        }
+            [HttpPost]
         public IActionResult AddEtudiant(String apogee, String nom, String prenom, String tel, String email, String adresse, String massar, String cin)
         {
             Etudiant etu = new Etudiant()
