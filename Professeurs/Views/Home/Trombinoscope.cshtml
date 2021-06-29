@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Trombinoscope";
+
+}
+
+
+
+<div class="header bg-default pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-control col-xl-12 col-lg-12" aria-label="Selectionner votre classe">
+                                <option selected>Mes classes</option>
+                                <option value="1">CP1</option>
+                                <option value="2">CP2</option>
+                                <option value="3">Génie Informatique</option>
+                                <option value="4">Génie Industriel</option>
+                                <option value="5">Génie Procédés</option>
+                            </select>
+                        </div>
+                        <div class="col">
+                            <select class="form-control col-xl-12 col-lg-12" aria-label="Selectionner votre classe">
+                                <option selected>Cycle</option>
+                                <option value="1">3eme Année</option>
+                                <option value="2">4eme Année</option>
+                                <option value="3">5eme Année</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:30px;" id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                            <div class="container">
+                                <form method="post" asp-controller="Home" asp-action="Imports" enctype="multipart/form-data">
+                                    <input type="file" name="file" class="form-control" />
+                                    <button type="submit" class="btn btn-primary col-xl-4 col-lg-4"> Importer</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h3>@ViewData["Title"]</h3>
+                </div>
+                <div class="col">
+                    <div class="input-group input-group-alternative input-group-merge">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                        </div>
+                        <input class="form-control" placeholder="Search" type="text">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                @foreach (var etudiant in ViewData["etudiants"] as List<Etudiant>)
+                {
+                    string id = '_'+etudiant.apogee.ToString();
+                    string appelId = "#" + id;
+
+                <div class="col-12 col-xl-3 col-sm-6 col-lg-3 col-md-4 mt-4 ">
+                    <div class="card card-stats mb-4 mb-xl-0 ">
+                        <div class="card-body">
+                            <a class="stretched-link" href="#" data-target="@appelId" data-toggle="modal"><img src="~/assets/img/theme/angular.jpg"  /></a>
+                            <h3 class="text-center">@etudiant.nom @etudiant.prenom</h3>
+                            <h6 class="text-center">@etudiant.annee @etudiant.filiere</h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal" id="@id" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4>Details</h4>
+                            </div>
+                            <div class="container">
+                                <label>Nom : @etudiant.nom</label> <br />
+                                <label>Prenom : @etudiant.prenom</label><br />
+                                <label>Filiere :@etudiant.filiere</label><br />
+                                <label>Annee :@etudiant.annee</label>
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+

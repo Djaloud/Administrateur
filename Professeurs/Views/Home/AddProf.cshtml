@@ -1,0 +1,54 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Ajouter Professeur";
+}
+
+
+<div class="header bg-default pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <div class="container-fluid mt--7">
+                <div class="card">
+                    <div class="card-header">
+                        <form method="POST">
+                            <div class="col-md-12">
+                                <label for="validationCustom01" class="form-label">ID Professeur</label>
+                                <input type="text" class="form-control" id="validationCustom01" name="id_prof" required>
+
+                            </div>
+                            <div class="col-md-12">
+                                <label for="validationCustom02" class="form-label">Nom Professeur</label>
+                                <input type="text" class="form-control" id="validationCustom02" name="nom_prof" required>
+
+                            </div>
+                            <div class="col-md-12">
+                                <label for="validationCustom02" class="form-label">Prénom Professeur</label>
+                                <input type="text" class="form-control" id="validationCustom02" name="prenom_prof" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="validationCustom03" class="form-label">Tél</label>
+                                <input type="text" class="form-control" id="validationCustom03" name="tel_prof" required>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="validationCustom03" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="validationCustom03" name="email_prof" required>
+                            </div>
+                            <div class="mb-12">
+                                <label for="validationTextarea" class="form-label">Adresse</label>
+                                <textarea class="form-control " id="validationTextarea" name="adresse_prof" required></textarea>
+
+                            </div>
+
+                            <div class="col-12">
+                                <button class="btn btn-primary" type="submit">Valider</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

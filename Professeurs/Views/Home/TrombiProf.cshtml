@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Trombinoscope Professeur";
+
+}
+
+@Model Professeur 
+
+<div class="header bg-default pb-8 pt-5 pt-md-8">
+    <div class="container-fluid">
+        <div class="header-body">
+            <!-- Card stats -->
+            
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <select class="form-control col-xl-12 col-lg-12" aria-label="Selectionner votre Departement">
+                                <option selected>Departements</option>
+                                <option value="1">Informatique</option>
+                                <option value="2">Industriel</option>
+                                <option value="3">Génie Procédés</option>
+                            </select>
+                        </div>
+                        <div style="margin-top:30px;" id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+                            <div class="container">
+                                <form method="post" asp-controller="Home" asp-action="Import" enctype="multipart/form-data">
+                                    <input type="file" name="file" class="form-control"/>
+                                    <button type="submit" class="btn btn-primary col-xl-4 col-lg-4"> Importer</button>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid mt--7">
+    <div class="card">
+        <div class="card-header">
+            <div class="row">
+                <div class="col">
+                    <h3>@ViewData["Title"]</h3>
+                </div>
+                
+            </div>
+        </div>
+        <div class="card-body">
+            <div class="col">
+                <table cellpadding="0" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Id Prof</th>
+                            <th>Nom Professeur</th>
+                            <th>Prenom Professeur</th>
+                            <th>tel</th>
+                            <th>email</th>
+                            <th>adresse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var prof in Model)
+                        {
+                        <td>@prof.id_professeur</td>
+                        <td>@prof.nom_prof</td>
+                        <td>@prof.prenom_prof</td>
+                        <td>@prof.tel</td>
+                        <td>@prof.email</td>
+                        <td>@prof.addresse</td>
+                    }
+
+                        </tbody>
+                    </table>
+                </div>
+               
+            </div>
+    </div>
+</div>
+
+
